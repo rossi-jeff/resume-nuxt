@@ -1,8 +1,19 @@
 <template>
-	<div id="education-page">{{ JSON.stringify(data) }}</div>
+	<div id="references-page">
+		<h2>References</h2>
+		<reference-card
+			v-for="reference of references"
+			:key="reference.Id"
+			:reference="reference"
+		/>
+	</div>
 </template>
 
 <script lang="ts" setup>
 import { GET_REFERENCES_QUERY } from '../../graphql/queries/get-references'
-const { data } = await useAsyncQuery(GET_REFERENCES_QUERY)
+import { Reference } from '../../types/reference.type'
+const { data } = await useAsyncQuery<{ getReferences: Reference[] }>(
+	GET_REFERENCES_QUERY
+)
+const references: Reference[] = data.value ? data.value.getReferences : []
 </script>
