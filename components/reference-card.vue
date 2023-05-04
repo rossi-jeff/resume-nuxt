@@ -9,13 +9,9 @@
 			<strong class="mr-2">Title</strong>
 			{{ props.reference.Title }}
 		</div>
-		<button
-			v-if="
-				(props.reference.Phones && props.reference.Phones.length) ||
-				(props.reference.Emails && props.reference.Emails.length)
-			"
-			@click="toggleDiv(`reference-contact-${props.reference.Id}`)"
-		>
+		<button v-if="(props.reference.Phones && props.reference.Phones.length) ||
+			(props.reference.Emails && props.reference.Emails.length)
+			" @click="toggleDiv(`reference-contact-${props.reference.Id}`)">
 			Contact
 		</button>
 		<div :id="`reference-contact-${props.reference.Id}`" style="display: none">
@@ -28,10 +24,8 @@
 				{{ props.reference.Emails.map((e) => e.Address).join(', ') }}
 			</div>
 		</div>
-		<button
-			v-if="props.reference.Comments && props.reference.Comments.length"
-			@click="toggleDiv(`reference-comments-${props.reference.Id}`)"
-		>
+		<button v-if="props.reference.Comments && props.reference.Comments.length"
+			@click="toggleDiv(`reference-comments-${props.reference.Id}`)">
 			Comments
 		</button>
 		<div :id="`reference-comments-${props.reference.Id}`" style="display: none">
@@ -54,10 +48,11 @@ const toggleDiv = (id: string) => {
 }
 </script>
 
-<style lang="postcss">
+<style lang="postcss" scoped>
 button {
 	@apply font-bold block text-three;
 }
+
 button:hover {
 	@apply underline;
 }
