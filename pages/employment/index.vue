@@ -1,6 +1,6 @@
 <template>
 	<div id="employment-page">
-		<h2>Employment</h2>
+		<h2 class="ml-2">Employment</h2>
 		<job-card v-for="job of jobs" :key="job.Id" :job="job" />
 	</div>
 </template>

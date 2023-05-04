@@ -1,26 +1,32 @@
 <template>
 	<div id="footer-bar" class="flex flex-wrap justify-between mx-4 mb-4">
-		<select name="pallete" @change="onSelectChanged" class="bg-four text-one">
-			<option
-				v-for="(name, index) of props.palleteNames"
-				:key="index"
-				:value="name"
-			>
-				{{ name }}
-			</option>
-		</select>
-		<div class="w-20 bg-one text-four border-four border">One</div>
-		<div class="w-20 bg-two text-three border-three border">Two</div>
-		<div class="w-20 bg-three text-two border-two border">Three</div>
-		<div class="w-20 bg-four text-one border-one border">Four</div>
+		<div>
+			<strong>Jeff Rossi</strong>
+		</div>
+		<div>1506 Tuscaloosa Ave, Holly Hill Florida 32117</div>
+		<div>
+			<a href="mailto:inquiries@jeff-rossi.com">inquiries@jeff-rossi.com</a>
+		</div>
+		<div>
+			<label for="pallete" class="mr-2">Pallete</label>
+			<select name="pallete" @change="onSelectChanged" class="bg-four text-one">
+				<option
+					v-for="(name, index) of props.paletteNames"
+					:key="index"
+					:value="name"
+				>
+					{{ name }}
+				</option>
+			</select>
+		</div>
 	</div>
 </template>
 
 <script lang="ts" setup>
-const props = defineProps<{ palleteNames: string[] }>()
-const emit = defineEmits(['palleteChanged'])
+const props = defineProps<{ paletteNames: string[] }>()
+const emit = defineEmits(['paletteChanged'])
 
 const onSelectChanged = (ev: any) => {
-	emit('palleteChanged', ev)
+	emit('paletteChanged', ev)
 }
 </script>

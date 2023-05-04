@@ -1,6 +1,6 @@
 <template>
 	<div id="testimonals-page">
-		<h2>Testimonials</h2>
+		<h2 class="ml-2">Testimonials</h2>
 		<comment-card
 			v-for="comment of comments"
 			:key="comment.Id"

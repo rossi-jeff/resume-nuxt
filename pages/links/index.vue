@@ -1,6 +1,6 @@
 <template>
 	<div id="links-page">
-		<h2>Links</h2>
+		<h2 class="ml-2">Links</h2>
 		<link-row v-for="link of links" :key="link.Id" :link="link" />
 	</div>
 </template>

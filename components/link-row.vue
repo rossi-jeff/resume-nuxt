@@ -1,7 +1,9 @@
 <template>
-	<div :id="`link-${props.link.Id}`" class="p-2">
+	<div :id="`link-${props.link.Id}`" class="card">
 		<div class="flex flex-wrap">
-			<div class="flex-grow">{{ props.link.Title }}</div>
+			<div class="flex-grow">
+				<strong>{{ props.link.Title }}</strong>
+			</div>
 			<div class="w-20">{{ props.link.Type }}</div>
 			<div class="w-20 text-right">
 				<a :href="props.link.Url" target="_blank">Visit</a>

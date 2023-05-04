@@ -1,15 +1,14 @@
 <template>
-	<div :id="`job-${props.job.Id}`" class="p-2">
+	<div :id="`job-${props.job.Id}`" class="card">
 		<h3>{{ props.job.Company }}</h3>
 		<div v-if="props.job.Address">{{ FormatAddress(props.job.Address) }}</div>
-		<div
-			v-if="props.job.From && props.job.To"
-			class="flex flex-wrap justify-between"
-		>
-			<strong>From</strong>
-			<div>{{ props.job.From.Month }} {{ props.job.From.Year }}</div>
-			<strong>To</strong>
-			<div>{{ props.job.To.Month }} {{ props.job.To.Year }}</div>
+		<div v-if="props.job.From && props.job.To" class="flex flex-wrap">
+			<strong class="w-16">From</strong>
+			<div class="w-32">
+				{{ props.job.From.Month }} {{ props.job.From.Year }}
+			</div>
+			<strong class="w-12">To</strong>
+			<div class="w-32">{{ props.job.To.Month }} {{ props.job.To.Year }}</div>
 		</div>
 		<div v-if="props.job.Title">
 			<strong class="mr-2">Title</strong>

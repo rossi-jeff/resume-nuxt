@@ -1,6 +1,6 @@
 <template>
 	<div id="references-page">
-		<h2>References</h2>
+		<h2 class="ml-2">References</h2>
 		<reference-card
 			v-for="reference of references"
 			:key="reference.Id"

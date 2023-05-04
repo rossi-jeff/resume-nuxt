@@ -1,6 +1,6 @@
 <template>
 	<div id="education-page">
-		<h2>Education</h2>
+		<h2 class="ml-2">Education</h2>
 		<school-card v-for="school of schools" :key="school.Id" :school="school" />
 	</div>
 </template>

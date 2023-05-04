@@ -1,7 +1,9 @@
 <template>
-	<div :id="`comment-${props.comment.Id}`" class="p-2">
+	<div :id="`comment-${props.comment.Id}`" class="card">
 		<div class="mb-2">{{ props.comment.Message }}</div>
-		<div class="text-right">-- {{ getAuthor(props.comment) }}</div>
+		<div class="text-right text-three font-bold">
+			-- {{ getAuthor(props.comment) }}
+		</div>
 	</div>
 </template>
 
