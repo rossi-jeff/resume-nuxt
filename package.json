@@ -12,6 +12,7 @@
     "@nuxtjs/apollo": "^5.0.0-alpha.6",
     "@nuxtjs/tailwindcss": "^6.6.7",
     "@types/node": "^18",
+    "@vue/apollo-composable": "^4.0.0-beta.4",
     "nuxt": "^3.4.3",
     "tw-colors": "^1.2.6"
   }
