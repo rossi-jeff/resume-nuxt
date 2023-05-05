@@ -45,6 +45,6 @@ label {
 }
 
 input {
-    @apply px-2 py-1 border-two border rounded text-two bg-three;
+    @apply px-2 py-1 border-two border rounded text-two bg-three font-bold;
 }
 </style>
