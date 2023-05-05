@@ -33,6 +33,15 @@
 const emailTypes = ["Home", "Work"];
 const phoneTypes = [...emailTypes, "Cell"];
 const preferredTypes = ["Phone", "Email"];
+const props = defineProps<
+    {
+        email: string,
+        phone: string,
+        preferred: string,
+        emailType: string,
+        phoneType: string
+    }
+>()
 </script>
 
 <style lang="postcss" scoped>

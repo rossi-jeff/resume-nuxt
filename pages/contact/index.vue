@@ -8,35 +8,67 @@
         </div>
 
         <div id="step-0" style="display: none">
-            <name-form :name="contact.Name" />
+            <NameForm :name="contact.Name" />
             <div class="flex flex-wrap justify-between">
                 <button @click="previousStep" :disabled="true" class="disabled">&lt; Previous</button>
                 <button @click="nextStep" class="next">Next &gt;</button>
             </div>
         </div>
         <div id="step-1" style="display: none">
-            <address-form />
+            <AddressForm :address="contact.Address" />
             <div class="flex flex-wrap justify-between">
                 <button @click="previousStep" class="previous">&lt; Previous</button>
                 <button @click="nextStep" class="next">Next &gt;</button>
             </div>
         </div>
         <div id="step-2" style="display: none">
-            <contact-methods-form />
+            <!--
+            <ContactMethodsForm :email="contact.Email" :email-type="contact.EmailType" :phone="contact.Phone"
+                :phone-type="contact.PhoneType" :preferred="contact.Preferred" />
+            // -->
             <div class="flex flex-wrap justify-between">
                 <button @click="previousStep" class="previous">&lt; Previous</button>
                 <button @click="nextStep" class="next">Next &gt;</button>
             </div>
         </div>
         <div id="step-3" style="display: none">
-            Step 3
+            <SubjectMessageForm :subject="contact.Subject" :message="contact.Message" />
             <div class="flex flex-wrap justify-between">
                 <button @click="previousStep" class="previous">&lt; Previous</button>
                 <button @click="nextStep" class="next">Next &gt;</button>
             </div>
         </div>
         <div id="step-4" style="display: none">
-            Step 4
+            <div class="my-4 mx-2">
+                <div>
+                    <strong>Name</strong>
+                    {{ FormatName(contact.Name) }}
+                </div>
+                <div>
+                    <strong>Address</strong>
+                    {{ FormatAddress(contact.Address) }}
+                </div>
+                <div>
+                    <strong>{{ contact.EmailType }} Email</strong>
+                    {{ contact.Email }}
+                </div>
+                <div>
+                    <strong>{{ contact.PhoneType }} Phone</strong>
+                    {{ contact.Phone }}
+                </div>
+                <div>
+                    <strong>Preferred</strong>
+                    {{ contact.Preferred }}
+                </div>
+                <div>
+                    <strong>Subject</strong>
+                    {{ contact.Subject }}
+                </div>
+                <div>
+                    <strong>Message</strong>
+                    {{ contact.Message }}
+                </div>
+            </div>
             <div class="flex flex-wrap justify-between">
                 <button @click="previousStep" class="previous">&lt; Previous</button>
                 <button @click="nextStep" :disabled="true" class="disabled">Next &gt;</button>
@@ -46,11 +78,12 @@
 </template>
 
 <script lang="ts" setup>
+import { ContactMethodsForm } from '~/.nuxt/components'
 import { ContactType } from '../../types/contact.type'
 
 const steps: string[] = ['Name', 'Address', 'Contact Information', 'Message', 'Confirmation']
 let current = 0
-const contact: ContactType = {
+const contact: ContactType = reactive({
     Name: {
         Salutation: "",
         First: "",
@@ -72,7 +105,7 @@ const contact: ContactType = {
     Preferred: "Email",
     Subject: "",
     Message: "",
-}
+})
 
 const goToStep = (index: number) => {
     if (current < index) return
