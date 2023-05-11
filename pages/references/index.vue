@@ -1,5 +1,8 @@
 <template>
 	<div id="references-page">
+		<Head>
+			<Title>Jeff Rossi | References</Title>
+		</Head>
 		<h2 class="ml-2">References</h2>
 		<reference-card
 			v-for="reference of references"

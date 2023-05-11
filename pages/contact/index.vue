@@ -1,5 +1,8 @@
 <template>
 	<div id="contact-page">
+		<Head>
+			<Title>Jeff Rossi | Contact Me</Title>
+		</Head>
 		<h2>Contact Me</h2>
 		<div v-if="!sent">
 			<div class="flex flex-wrap justify-between">

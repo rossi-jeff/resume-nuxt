@@ -1,5 +1,8 @@
 <template>
 	<div id="testimonals-page">
+		<Head>
+			<Title>Jeff Rossi | Testimonials</Title>
+		</Head>
 		<h2 class="ml-2">Testimonials</h2>
 		<comment-card
 			v-for="comment of comments"

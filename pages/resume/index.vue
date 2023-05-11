@@ -1,6 +1,9 @@
 
 <template>
 	<div class="resume-page">
+		<Head>
+			<Title>Jeff Rossi | Resume</Title>
+		</Head>
 		<h2 class="ml-2">Resume</h2>
 
 		<div class="flex flex-wrap">

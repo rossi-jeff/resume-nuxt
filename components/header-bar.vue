@@ -17,7 +17,7 @@
 				</ul>
 			</div>
 		</div>
-		<div class="hidden md:flex md:flex-wrap md:marker:justify-between">
+		<div class="hidden md:flex md:flex-wrap md:justify-between">
 			<nav-links />
 		</div>
 	</div>

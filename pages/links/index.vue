@@ -1,5 +1,8 @@
 <template>
 	<div id="links-page">
+		<Head>
+			<Title>Jeff Rossi | Links</Title>
+		</Head>
 		<h2 class="ml-2">Links</h2>
 		<link-row v-for="link of links" :key="link.Id" :link="link" />
 	</div>

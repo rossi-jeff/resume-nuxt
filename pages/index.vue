@@ -1,5 +1,9 @@
 <template>
 	<div id="home-page" class="p-2">
+
+		<Head>
+			<Title>Jeff Rossi | Software Developer</Title>
+		</Head>
 		<h2>About Myself</h2>
 
 		<div class="mb-4">
@@ -80,3 +84,4 @@
 		</div>
 	</div>
 </template>
+
