@@ -1,5 +1,5 @@
 <template>
-	<div id="footer-bar" class="flex flex-wrap justify-between mx-4 mb-4">
+	<div id="footer-bar" class="md:flex md:flex-wrap md:justify-between mx-4 mb-4">
 		<div>
 			<strong>Jeff Rossi</strong>
 		</div>
@@ -10,11 +10,7 @@
 		<div>
 			<label for="pallete" class="mr-2">Pallete</label>
 			<select name="pallete" @change="onSelectChanged" class="bg-four text-one">
-				<option
-					v-for="(name, index) of props.paletteNames"
-					:key="index"
-					:value="name"
-				>
+				<option v-for="(name, index) of props.paletteNames" :key="index" :value="name">
 					{{ name }}
 				</option>
 			</select>
